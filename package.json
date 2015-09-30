@@ -1,0 +1,89 @@
+{
+  "name": "happner",
+  "version": "0.0.27-tr2132-neptronic-0.0.29",
+  "description": "Distributed application engine with evented storage and mesh services",
+  "main": "lib/mesh.js",
+  "bin": {
+    "happner": "bin/happner",
+    "h": "bin/h"
+  },
+  "scripts": {
+    "test": "LOG_LEVEL=off objective --once"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/happner/happner.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/happner/happner/issues"
+  },
+  "homepage": "https://github.com/happner/happner",
+  "devDependencies": {
+    "chai": "^2.2.0",
+    "mocha": "^2.2.4",
+    "objective": "0.0.31",
+    "request": "^2.53.0",
+    "should": "^7.1.0",
+    "when": "^3.7.3"
+  },
+  "postinstall": "bower install",
+  "dependencies": {
+    "async": "^0.9.0",
+    "bluebird": "^2.9.34",
+    "bower": "^1.5.2",
+    "byline": "^4.2.1",
+    "commander": "^2.8.1",
+    "diskspace": "^0.1.7",
+    "fs-extra": "^0.24.0",
+    "happn": "0.1.28",
+    "happn-ui-module": "^0.1.15",
+    "happner-demo": "^0.0.1",
+    "happner-terminal": "^0.0.4",
+    "http-proxy": "^1.11.1",
+    "http-proxy-middleware": "^0.5.0",
+    "keypress": "^0.2.1",
+    "log4js": "^0.6.24",
+    "md5": "^2.0.0",
+    "merge": "^1.2.0",
+    "moment": "^2.9.0",
+    "repl.history": "^0.1.3",
+    "serve-static": "^1.9.3",
+    "shortid": "^2.2.2",
+    "sillyname": "0.0.3",
+    "uglify-js": "^2.4.24",
+    "usage": "^0.7.0"
+  },
+  "gitHead": "98fe553f1243ba44ef6e782a8f86062aaaab1136",
+  "_id": "happner@0.0.27-tr2132-neptronic-0.0.29",
+  "_shasum": "1ade8588638aac64e3b29e0c2b3bbec0c5865754",
+  "_from": "happner@0.0.27-tr2132-neptronic-0.0.29",
+  "_npmVersion": "2.6.1",
+  "_nodeVersion": "0.10.38",
+  "_npmUser": {
+    "name": "smc-tenacious",
+    "email": "eggers.jens@gmail.com"
+  },
+  "dist": {
+    "shasum": "1ade8588638aac64e3b29e0c2b3bbec0c5865754",
+    "tarball": "http://registry.npmjs.org/happner/-/happner-0.0.27-tr2132-neptronic-0.0.29.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "jeggers",
+      "email": "eggers.jens@gmail.com"
+    },
+    {
+      "name": "nomilous",
+      "email": "nomilous@gmail.com"
+    },
+    {
+      "name": "smc-tenacious",
+      "email": "eggers.jens@gmail.com"
+    }
+  ],
+  "directories": {},
+  "_resolved": "http://registry.npmjs.org/happner/-/happner-0.0.27-tr2132-neptronic-0.0.29.tgz",
+  "readme": "ERROR: No README data found!"
+}
