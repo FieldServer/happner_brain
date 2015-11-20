@@ -14,6 +14,8 @@ var historyFile = path.normalize(home + '/.happner/repl_history');
 
 } */
 
+var doneReadme = false;
+
 module.exports = function(opts, callback) {
 
   var canHistory = true;
@@ -73,12 +75,12 @@ module.exports = function(opts, callback) {
         and subscribe to events with the **Event Api** and call methods 
         both local and remote on the **Exchange Api**.
 
-        All access is via the **$local** variable.
+        All access is via the **$happn** variable.
 
-            $local.README
-            (pending) $local.data.README
-            (pending) $local.event.README
-            (pending) $local.exchange.README
+            $happn.README
+            (pending) $happn.data.README
+            (pending) $happn.event.README
+            (pending) $happn.exchange.README
         
 
         Also included is a set of utilities that alleviate the pains of
@@ -97,7 +99,7 @@ module.exports = function(opts, callback) {
         r.context.Happner = require('../../../../');
       } catch (e) {}
 
-      r.context.$local = opts.$happn;
+      r.context.$happn = opts.$happn;
 
       if (canHistory) history(r, historyFile);
       
@@ -155,14 +157,18 @@ module.exports = function(opts, callback) {
         enumerable: true
       });
 
+      if (doneReadme) return;
+
       try {
         opts.emdee(r.context, {
           paths: [
             'README',
-            '$local/README'
+            '$happn/README'
           ]
         });
       } catch (e) {}
+
+      doneReadme = true;
 
     }
   });
