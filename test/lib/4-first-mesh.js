@@ -6,6 +6,8 @@ var config = {
     port: 3001,
     authTokenSecret: 'a256a2fd43bf441483c5177fc85fd9d3',
     systemSecret: 'mesh',
+    secure:true,
+    adminPassword:'guessme',
     log_level: 'info|error|warning'
   },
   endpoints: {},
@@ -44,7 +46,7 @@ var config = {
   }
 };
 
-Mesh().initialize(config, function(err) {
+(new Mesh()).initialize(config, function(err) {
 
   if (err) {
     console.log(err);

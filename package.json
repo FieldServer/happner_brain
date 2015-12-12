@@ -1,6 +1,6 @@
 {
   "name": "happner",
-  "version": "1.0.1",
+  "version": "1.2.6",
   "description": "Distributed application engine with evented storage and mesh services",
   "main": "lib/mesh.js",
   "bin": {
@@ -8,7 +8,7 @@
     "h": "bin/h"
   },
   "scripts": {
-    "test": "LOG_LEVEL=off ./mocha && LOG_LEVEL=off SKIP_AUTO_LOAD=1 objective --once"
+    "test": "mocha test"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,6 @@
     "fxt": "^1.0.2",
     "happner-test-modules": "0.0.3",
     "mocha": "^2.2.4",
-    "objective": "0.0.40",
     "request": "^2.53.0",
     "should": "^7.1.0",
     "traverse": "^0.6.6",
@@ -40,50 +39,16 @@
     "diskspace": "0.1.7",
     "fs-extra": "0.24.0",
     "glob": "5.0.15",
-    "happn": "1.0.2",
-    "happner-terminal": "0.0.6",
-    "log4js": "0.6.28",
+    "happn": "1.1.4",
+    "happn-logger": "0.0.1",
+    "happner-terminal": "0.0.7",
     "md5": "2.0.0",
     "merge": "1.2.0",
     "moment": "2.10.6",
-    "uglify-js": "2.6.1",
     "proc-stats": "0.0.4",
     "serve-static": "1.10.0",
     "shortid": "2.2.4",
-    "sillyname": "0.0.3"
-  },
-  "gitHead": "3da344d5d9b9f78ec04a04a3779e56086169c101",
-  "_id": "happner@1.0.1",
-  "_shasum": "6a183335b742f90fcaf4291c0e5c90515eac91cc",
-  "_from": "happner@*",
-  "_npmVersion": "2.6.1",
-  "_nodeVersion": "0.10.40",
-  "_npmUser": {
-    "name": "nomilous",
-    "email": "nomilous@gmail.com"
-  },
-  "dist": {
-    "shasum": "6a183335b742f90fcaf4291c0e5c90515eac91cc",
-    "tarball": "http://registry.npmjs.org/happner/-/happner-1.0.1.tgz"
-  },
-  "maintainers": [
-    {
-      "name": "jeggers",
-      "email": "eggers.jens@gmail.com"
-    },
-    {
-      "name": "nomilous",
-      "email": "nomilous@gmail.com"
-    },
-    {
-      "name": "smc",
-      "email": "fsserver.za@gmail.com"
-    },
-    {
-      "name": "smc-tenacious",
-      "email": "eggers.jens@gmail.com"
-    }
-  ],
-  "directories": {},
-  "_resolved": "https://registry.npmjs.org/happner/-/happner-1.0.1.tgz"
+    "sillyname": "0.0.3",
+    "uglify-js": "2.6.1"
+  }
 }

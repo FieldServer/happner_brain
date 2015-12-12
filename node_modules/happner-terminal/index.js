@@ -49,7 +49,7 @@ Terminal.prototype.start = function($happn, opts, callback) {
 
   var _this = this;
 
-  UTILITIES.log.on('before', function() {
+  $happn.log.on('before', function() {
 
     if (prompt.node) return;
 
@@ -64,7 +64,7 @@ Terminal.prototype.start = function($happn, opts, callback) {
   
   var replace;
   
-  UTILITIES.log.on('after', function() {
+  $happn.log.on('after', function() {
 
     if (prompt.node) return;
 

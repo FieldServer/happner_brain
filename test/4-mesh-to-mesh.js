@@ -6,7 +6,7 @@ var spawn = require('child_process').spawn
   , remote
   , assert = require('assert')
   , mesh
-  ;
+  , Mesh = require('../')
 
 var sep = require('path').sep;
 var libFolder = __dirname + sep + 'lib' + sep;
@@ -23,8 +23,9 @@ config = {
     theFarawayTree: {  // remote mesh node
       config: {
         port: 3001,
-        secret: 'mesh',
-        host: 'localhost' // TODO This was necessary, did not default
+        host: 'localhost', // TODO This was necessary, did not default
+        username: '_ADMIN',
+        password: 'guessme'
       }
     }
   },
@@ -34,32 +35,28 @@ config = {
 
 describe('Mesh to Mesh', function() {
 
-  require('./lib/0-hooks')();
-  
+  this.timeout(20000);
+
   before(function(done) {
 
     var _this = this;
-
-    this.timeout(5000);
 
     // spawn remote mesh in another process
     remote = spawn('node', [libFolder + '4-first-mesh']);
 
     remote.stdout.on('data', function(data) {
 
-      console.log(data.toString());
+      // console.log(data.toString());
 
       if (data.toString().match(/READY/)){
 
-      
 
-        mesh = _this.Mesh();
-        console.log('starting this one', mesh, config);
+        mesh = new Mesh();
+
+        // console.log('starting this one', mesh, config);
         // mesh.initialize(config, function(err) {
         mesh.initialize(config, function(e){
-
           done(e);
-
         });
       }
 
@@ -69,16 +66,24 @@ describe('Mesh to Mesh', function() {
 
   after(function(done) {
     remote.kill();
-    done();
-  })
+    mesh.stop(done);
+  });
 
   context('the faraway tree', function() {
 
     it("we can ride moonface's slippery slip",function(done) {
+
+      var eventFired = false;
+
+      mesh.event.theFarawayTree.moonface.on('*', function(data, meta){
+        if (data.value == 'whoa') eventFired = true;
+      });
+
       mesh.exchange.theFarawayTree.moonface.rideTheSlipperySlip(
         'one!', 'two!', 'three!', function(err, res) {
 
           assert(res == 'one! two! three!, wheeeeeeeeeeeeheeee!');
+          assert(eventFired);
           done()
 
       });
